@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'dart:developer' as developper;
+import 'package:logger/logger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,7 +10,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -34,10 +37,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  var logger = Logger();
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      developper.log("dart:developer でのlog counter++されました");
+      logger.v("logger でのlog counter++されました");
     });
   }
 
@@ -48,8 +54,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text('Hello'),
+      body: Column(children: [
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: <widget>[
+        //     Expanded(child: Text("くま--"),),
+        //     Expanded(child: Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),),
+        //   ],
+        // ),
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //     Text("某企業のくま");
+        //
+        // )
+      ],
+
+
+
+
       ),
     );  }
 }
