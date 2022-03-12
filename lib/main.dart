@@ -50,12 +50,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
+    List<Widget> images = [
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png'),
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png'),
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png')
+
+
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(children: [
-        // Row(
+
+      body: GridView.count(
+          crossAxisCount: 3,crossAxisSpacing: 10,
+          children: images
+      )
+
+      // Row(
         //   crossAxisAlignment: CrossAxisAlignment.center,
         //   children: <widget>[
         //     Expanded(child: Text("くま--"),),
@@ -67,11 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
         //     Text("某企業のくま");
         //
         // )
-      ],
-
-
-
-
-      ),
-    );  }
+    );
+    }
 }
