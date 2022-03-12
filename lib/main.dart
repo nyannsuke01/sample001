@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      logger.v("Logger.v");
       _counter++;
       developper.log("dart:developer でのlog counter++されました");
       logger.v("logger でのlog counter++されました");
@@ -54,24 +55,25 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(children: [
-        // Row(
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   children: <widget>[
-        //     Expanded(child: Text("くま--"),),
-        //     Expanded(child: Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),),
-        //   ],
-        // ),
-        // Row(
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //     Text("某企業のくま");
-        //
-        // )
-      ],
-
-
-
-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+            ),
+          ],
+        ),
       ),
-    );  }
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
 }
