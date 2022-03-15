@@ -59,7 +59,18 @@ class _MyWiggetState extends State<MyWigget> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> images = [
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png'),
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png'),
+      Image.network('https://colopl.co.jp/assets/img/kuma/kv-kuma-chara.png'),
+      Image.network('http://j.people.com.cn/NMediaFile/2015/0413/FOREIGN201504131605000450602809121.jpg'),
+      Image.network('https://2.bp.blogspot.com/-DDtL958qAjs/VHPgLGRNi2I/AAAAAAAApPU/oXTPlRulaEk/s400/pet_dog_sleep.png')
 
+    ];
     return Scaffold(
         appBar: AppBar(
           title: const Text('Animation'),
@@ -83,12 +94,11 @@ class _MyWiggetState extends State<MyWigget> {
               ),
               ElevatedButton(
                 child: const Text('start'),
-                onPressed: () => change(),
+                onPressed: () => change()
               ),
             ],
           ),
-
-        )
+        ),
     );
   }
 }
